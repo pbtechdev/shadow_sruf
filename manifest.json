@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Shadow surf",
+  "version": "1.0.0",
+  "description": "Transform your browsing with sleek dark mode for Chrome",
+  "action": {
+    "default_popup": "popup/index.html"
+  },
+  "permissions": ["activeTab", "scripting"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
