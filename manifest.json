@@ -1,16 +1,20 @@
 {
   "manifest_version": 3,
   "name": "Shadow surf",
-  "version": "1.0.0",
-  "description": "Transform your browsing with sleek dark mode for Chrome",
-  "action": {
-    "default_popup": "popup/index.html"
+  "version": "0.0.1",
+  "description": "It enables dark mode on websites lacking native support, improving visibility and reducing eye strain",
+  "icons": {
+    "16": "images/icon-16.png",
+    "32": "images/icon-32.png",
+    "48": "images/icon-48.png",
+    "128": "images/icon-128.png"
   },
-  "permissions": ["activeTab", "scripting"],
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["content.js"]
-    }
-  ]
+  "action": {
+    "default_title": "Toggle dark mode"
+  },
+  "background": {
+    "service_worker": "service_worker.js"
+  },
+
+  "permissions": ["scripting", "activeTab", "storage"]
 }
